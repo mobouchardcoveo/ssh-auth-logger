@@ -121,7 +121,6 @@ func getServerVersion(host string) string {
 
 func makeSSHConfig(host string) ssh.ServerConfig {
 	config := ssh.ServerConfig{
-		PasswordCallback:  authenticatePassword,
 		PublicKeyCallback: authenticateKey,
 		ServerVersion:     getServerVersion(host),
 		MaxAuthTries:      3,
